@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #86b9dd;">
+    <div class="container-fluid">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="{{url_for('index')}}">Flask App</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+     
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('form')}}">Form</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-light  btn-outline-info type="submit">Go</button>
+          </form>
+      </div>
+    </div>
+  </nav> 
