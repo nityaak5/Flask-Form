@@ -15,8 +15,8 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'nityaak5@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Alohorma05*'
+app.config['MAIL_USERNAME'] = <your mail>
+app.config['MAIL_PASSWORD'] = <Your password>
 
 mail=Mail(app)
 
@@ -65,7 +65,7 @@ def form():
             session['known']=False
             
            
-            msg=Message("Hi", sender='nityaak5@gmail.com', recipients=['nityaak5@gmail.com'])
+            msg=Message("Hi", sender='<email>', recipients=['<your email>'])
             msg.body="Test Body"
             mail.send(msg)
         else:
