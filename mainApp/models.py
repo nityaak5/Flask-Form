@@ -21,6 +21,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True)
     username = db.Column(db.String(20), unique=True)
     password=db.Column(db.String(50))
+    image_file = db.Column(db.String(20), default='default.jpg')
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     
 
