@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Login Form {% endblock %}
+{% block title %} Password Reset {% endblock %}
 
 {% block content %}
     
@@ -7,7 +7,7 @@
         <div class="row align-items-center">
             <div class="col-xs-1 center-block" style="text-align:center; margin-top: 30px">
             
-                <h3>SIGN IN</h3>
+                <h3>Reset Password</h3>
              </div>
         <form method="POST" action="">
             {{ form.hidden_tag() }}
@@ -28,36 +28,12 @@
                     {% endif %}
                 </div>
                 <br>
-                <div class="col-md-6 offset-md-3">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                        {{ form.password(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                
-                <br>
+               
                 <div class="d-grid gap-2 col-6 mx-auto"">
                     {{ form.submit(class="btn btn-light  btn-outline-info") }}
                 </div>
-                <br>
-                <div class="col-xs-1 center-block" style="text-align:center;">
-                
-                Don't Have An Account? <a class="text-white" href="{{ url_for('form') }}"> Register </a>
-                </div>
-
-                <div class="col-xs-1 center-block" style="text-align:center;">
-                
-                    Forgot Password?  <a class="text-white" href="{{ url_for('reset_request') }}"> Reset </a>
-                </div>
-              
-          
+ 
+         
         
         </form>
     </div>

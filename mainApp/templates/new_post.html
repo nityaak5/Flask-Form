@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %} New Post {% endblock %}
+
+
+{% block content %}
+<div class="content-section">
+        <div class="row align-items-center">
+            <div class="col-xs-1 center-block" style="text-align:center; margin-top: 30px">
+                <h3>New Post</h3>
+             </div>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                
+                    <br>
+                
+                    <div class="col-md-6 offset-md-3">
+                        {{ form.title.label(class="form-control-label") }}
+                        {% if form.title.errors %}
+                            {{ form.title(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.title(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div class="col-md-6 offset-md-3">
+                        {{ form.content.label(class="form-control-label") }}
+                        {% if form.content.errors %}
+                            {{ form.content(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.content.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.content(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    
+                    <br>
+                    <div class="d-grid gap-2 col-6 mx-auto"">
+                        {{ form.submit(class="btn btn-light  btn-outline-info") }}
+                    </div>
+                    <br>
+            </form>
+    </div>
+    </div>
+{% endblock content %}

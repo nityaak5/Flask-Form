@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}post{% endblock %}
+
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card p-1">
+        <div class="d-flex align-items-center mx-auto">
+            
+                
+                <div class="row">
+                    <a class="mr-2" href="{{url_for('profile')}}">{{ post.author.username }}</a>
+                    {% if post.author == current_user %}
+                    <div>
+                      <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                      <a class="btn btn-danger btn-sm mt-1 mb-1" href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
+                    </div>
+                  {% endif %}
+                    
+                    <h2 class="article-title">{{ post.title }}</h2>
+                    <p class="article-content">{{ post.content }}</p>
+
+                </div>
+              
+         
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+                   
+
+
+    
+{% endblock content %}

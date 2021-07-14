@@ -19,6 +19,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('profile')}}">Profile</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('new_post')}}">New Post</a>
+          </li>
           {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('loginForm')}}">Log In</a>
@@ -28,10 +31,10 @@
             </li>
           {% endif %}
         </ul>
-        <form class="d-flex">
+        <!-- <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light  btn-outline-info type="submit">Go</button>
-          </form>
+          </form> -->
       </div>
     </div>
   </nav> 
